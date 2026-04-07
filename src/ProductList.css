@@ -214,8 +214,12 @@ body {
   .product-button:hover {
     background-color: #45a049;
   }
+
+  .product-button.added-to-cart.isInCart {
+    background-color: grey;
+  }
   
-  .product-button.added-to-cart {
+  .product-button.isInCart {
     background-color: grey; /* Grey when product is added */
   }
   @media (max-width: 1200px) {
