@@ -7,12 +7,31 @@ export const CartSlice = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
+      //retrieved the plant information from the given payload
+      const {name, image, cost} = action.payload;
+
+      const itemToUpdate = state.items.find(item => item.name === name);
+      if (itemToUpdate) {
+        itemToUpdate.quantity++;
+      }
+
+      else {
+        //adds to cart when item isn't present
+        state.items.push({name, image, cost, quantity: 1});
+      }
     
     },
     removeItem: (state, action) => {
+      //creates a new array without the item name that matches the given payload
+      state.items = state.items.filter(item => item.name !== action.payload);
     },
     updateQuantity: (state, action) => {
+      const {name, quantity} = action.payload;
 
+      const itemToUpdate = state.find(item => item.name === name);
+      if (itemToUpdate) {
+        itemToUpdate.quantity = quantity;
+      }
     
     },
   },
