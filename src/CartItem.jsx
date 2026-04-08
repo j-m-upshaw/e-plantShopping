@@ -10,8 +10,8 @@ const CartItem = ({ onContinueShopping }) => {
   // Calculate total amount for all products in the cart
   const calculateTotalAmount = () => {
     let total = 0;
-    //goes through each item from the imported cart array
-    cart.array.forEach(item => {
+    //goes through each item from the imported cart(cart.arry.forEach doesn't work because its already one)
+    cart.forEach(item => {
       let tempCost = parseFloat(item.cost.substring(1)) * item.quantity;
       total += tempCost;
     });
