@@ -214,11 +214,8 @@ body {
   .product-button:hover {
     background-color: #45a049;
   }
-
-  .product-button.added-to-cart.isInCart {
-    background-color: grey;
-  }
   
+  /*In the classname isInCart is added to the classname to activate this style*/
   .product-button.isInCart {
     background-color: grey; /* Grey when product is added */
   }
